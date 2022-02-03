@@ -9,7 +9,7 @@
   </head>
   <body>
     <div>
-      <h1 class ="header" onclick="changeTitle(event); addClassToTitle(event);">This is the title of the page</h1>
+      <h1 class ="header" onclick="changeTitle(event); addClassToTitle(event); makeItClickable(event);">This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
     </div>
 
@@ -28,9 +28,9 @@
         <li>3rd</li>
       </ul>
 
-      <a href="strive.school" ;>This link goes to Strive School</a>
+      <a href="strive.school">This link goes to Strive School</a>
 
-      <div>
+      <div >
         <p >This text is just for the exercise</p>
       </div>
 
@@ -83,8 +83,11 @@
        Write a function for changing the href property of every link to https://www.google.com
       */
 
-      const changeUrls = function () {
-      
+      const changeUrls = function (a) {
+        var anchors = document.getElementsByTagName("a")
+        for (let i = 0; i <anchors.length; i++) {
+          anchors[i].href ="https://www.google.com"
+        }
       };
 
       /* EXERCISE 5
@@ -116,15 +119,18 @@
       */
 
       const paintItGreen = function () {
-        //
+        
       };
 
       /* EXERCISE 9
        Make the heading of the page change color every time the user clicks on it.
       */
 
-      const makeItClickable = function () {
-        //
+      const makeItClickable = function (changeColor) {
+        let colorList = ["red", "green", "blue", "peru", "pink"];
+        for ( let i = 0; i < colorList.length; i++) {
+            changeColor.target.style.color = colorList[i]; 
+        }
       };
 
       /* EXERCISE 10
